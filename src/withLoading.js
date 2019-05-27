@@ -1,21 +1,19 @@
 import React from 'react'
 
-export default function withLoading(WrappedComponent) {
+export default function withLoading(WrappedComponent, {url}) {
+  
+  const API_URL = 'http://localhost:3001/'
   return class extends React.Component {
     state = {
-      data: []
+      data: [],
+      errorMessage: ''
     }
     componentDidMount() {
       setTimeout(() => {
-        this.setState({data: [
-          {
-            name: "João",
-            lastname: "Ninguém"
-          }, {
-            name: "Jorge",
-            lastname: "Alguém"
-          }] 
-        })
+        fetch(API_URL + url).then(response => response.json())
+          .then(data => this.setState({data}))
+          .catch(e => this.setState({errorMessage: 'Houve um erro ao buscar os dados'}))
+          
       }, 2000)
     }
 
@@ -23,7 +21,7 @@ export default function withLoading(WrappedComponent) {
       if(this.state.data.length > 0) {
         return(<WrappedComponent data={this.state.data}/>)
       } else {
-        return(<span>Loading...</span>)
+        return(<span>{this.state.errorMessage || 'Loading...'}</span>)
       }
     }
   }

@@ -5,12 +5,12 @@ const listComponent = ({data}) => {
   return (
     <ul>
       {data.map(item => 
-        <li>{`${item.name} ${item.lastname}`}</li>
+        <li>{`${item.name} ${item.size}`}</li>
       )}
     </ul>
   )
 }
 
 export default withLoading(listComponent, {
-  url: 'person-data'
+  url: 'companies-data'
 })

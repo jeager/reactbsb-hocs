@@ -1,0 +1,20 @@
+{
+  "person-data": [
+    {
+      "name": "João",
+      "lastname": "Ninguém"
+    }, {
+      "name": "Jorge",
+      "lastname": "Alguém"
+    }
+  ],
+  "companies-data": [
+    {
+      "name": "GudiSofter",
+      "size": "Pequena"
+    }, {
+      "name": "GourmetSofter",
+      "size": "Grande"
+    }
+  ]
+}
