@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetches data from server 1`] = `
+<ul
+  data-testid="people-list"
+>
+  <li>
+    João Ninguém
+  </li>
+  <li>
+    Jorge Alguém
+  </li>
+</ul>
+`;

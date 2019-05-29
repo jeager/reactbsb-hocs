@@ -3,9 +3,9 @@ import withLoading from './withLoading';
 
 const listComponent = ({data}) => {
   return (
-    <ul>
+    <ul data-testid="people-list">
       {data.map(item => 
-        <li>{`${item.name} ${item.lastname}`}</li>
+        <li key={item.name}>{`${item.name} ${item.lastname}`}</li>
       )}
     </ul>
   )

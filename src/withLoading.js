@@ -9,12 +9,9 @@ export default function withLoading(WrappedComponent, {url}) {
     const [errorMessage, setErrorMessage] = useState('')
 
     useEffect(() => {
-      setTimeout(() => {
-        fetch(API_URL + url).then(response => response.json())
+      fetch(API_URL + url).then(response => response.json())
           .then(data => setData(data))
           .catch(e => setErrorMessage('Houve um erro ao buscar os dados'))
-          
-      }, 2000)
     },[])
 
     if(data.length > 0) {
